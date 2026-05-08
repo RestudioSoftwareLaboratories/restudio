@@ -1,3 +1,3 @@
 Links
 
-- Website: https://restudio-games.github.io/restudio/
+- Website: https://restudiosoftwarelaboratories.github.io/restudio/
