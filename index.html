@@ -4,8 +4,7 @@
 <meta charset="UTF-8">
 <title>Restudio — Software Laboratories</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <link rel="icon" href="https://i.postimg.cc/66MLbbg8/restudio-profile.png" type="image/png">
-<!-- Favicon -->
+<link rel="icon" href="https://i.postimg.cc/66MLbbg8/restudio-profile.png" type="image/png">
 <link rel="icon" type="image/png" href="https://i.postimg.cc/JzYGnt17/restudio-profile.png">
 
 <!-- Google Fonts: Tiny5 & Jersey 15 -->
@@ -28,7 +27,6 @@ body {
     flex-direction: column;
 }
 
-/* خلفية سوداء نقية مع تعتيم خفيف جداً للصورة */
 body::before {
     content: '';
     position: fixed;
@@ -44,7 +42,6 @@ body::before {
     z-index: -2;
 }
 
-/* طبقة سوداء إضافية لتغميق الخلفية وجعلها واضحة */
 body::after {
     content: '';
     position: fixed;
@@ -57,7 +54,6 @@ body::after {
     z-index: -1;
 }
 
-/* Main content area */
 .main-content {
     flex: 1;
     max-width: 900px;
@@ -68,7 +64,6 @@ body::after {
     z-index: 1;
 }
 
-/* ===== Top Bar ===== */
 header {
     position: sticky;
     top: 0;
@@ -85,7 +80,7 @@ header {
 }
 
 .top-logo img {
-    height: 28px;
+    height: 35px;
 }
 
 .nav {
@@ -107,7 +102,6 @@ header {
     color: #50B854;
 }
 
-/* ===== Dropdown ===== */
 .dropdown {
     position: relative;
 }
@@ -137,7 +131,6 @@ header {
     color: #50B854;
 }
 
-/* ===== Hero Section ===== */
 .hero-section {
     text-align: center;
     padding: 60px 20px 50px 20px;
@@ -159,10 +152,9 @@ header {
     margin-top: 12px;
 }
 
-/* ===== About Section - عادي جداً ===== */
 .about-section {
     margin-bottom: 40px;
-    scroll-margin-top: 70px; /* هام: تعويض الـ sticky header عند التمرير */
+    scroll-margin-top: 70px;
 }
 
 .about-section h2 {
@@ -192,6 +184,53 @@ header {
     color: #7ed956;
 }
 
+/* historical note as plain text paragraph — no border, no background */
+.historical-note-plain {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #cccccc;
+    font-family: 'Tiny5', monospace;
+    margin-bottom: 16px;
+}
+
+.historical-note-plain strong {
+    color: #e0e0e0;
+    font-weight: normal;
+}
+
+.historical-note-plain .wiki-link-plain {
+    color: #50B854;
+    text-decoration: none;
+    margin-left: 6px;
+    display: inline-block;
+}
+
+.historical-note-plain .wiki-link-plain:hover {
+    text-decoration: underline;
+    color: #7ed956;
+}
+
+/* New styling for "OR" separator + Storypedia link */
+.storypedia-or {
+    color: #a0a0a0;
+    font-weight: normal;
+    margin: 0 8px 0 4px;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.storypedia-link {
+    color: #50B854;
+    text-decoration: none;
+    margin-left: 0px;
+    display: inline-block;
+}
+
+.storypedia-link:hover {
+    text-decoration: underline;
+    color: #7ed956;
+}
+
 .simple-list {
     list-style: none;
     margin: 20px 0 10px 0;
@@ -210,7 +249,6 @@ header {
     color: #50B854;
 }
 
-/* ===== FOOTER ===== */
 footer {
     width: 100%;
     background: #000000;
@@ -228,13 +266,14 @@ footer {
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 32px;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     border-bottom: 1px solid #1f1f1f;
-    padding-bottom: 18px;
+    padding-bottom: 20px;
 }
 
 .footer-section {
     min-width: 160px;
+    flex: 1 1 auto;
 }
 
 .footer-section h4 {
@@ -262,22 +301,11 @@ footer {
     text-decoration: none;
     font-size: 12px;
     transition: color 0.2s;
+    word-break: break-word;
 }
 
 .footer-section a:hover {
     color: #50B854;
-}
-
-.footer-section li span {
-    color: #888;
-    font-size: 12px;
-}
-
-/* New style for inactive/placeholder items (non-link) */
-.footer-section .inactive-item {
-    color: #555;
-    font-size: 12px;
-    cursor: default;
 }
 
 .footer-social {
@@ -304,13 +332,36 @@ footer {
     filter: brightness(1.2);
 }
 
+/* Support row - separate line above copyright (plain design) */
+.footer-support-row {
+    text-align: center;
+    margin-bottom: 12px;
+    padding-top: 4px;
+}
+
+.footer-support-link {
+    font-size: 12px;
+    color: #aaaaaa;
+    text-decoration: none;
+    font-family: 'Tiny5', monospace;
+    transition: color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 0.3px;
+}
+
+.footer-support-link:hover {
+    color: #50B854;
+    text-decoration: underline;
+}
+
 .footer-copy {
     text-align: center;
     font-size: 10px;
     color: #5a5a5a;
 }
 
-/* Responsive */
 @media (max-width: 720px) {
     .footer-main {
         flex-direction: column;
@@ -334,17 +385,33 @@ footer {
     .nav button {
         font-size: 14px;
     }
+    .historical-note-plain, .about-section p {
+        font-size: 13px;
+    }
+    .storypedia-or {
+        font-size: 12px;
+    }
+    .footer-support-link {
+        font-size: 11px;
+    }
 }
 
 @media (max-width: 480px) {
     .main-title {
         font-size: 1.8rem;
     }
-    .about-section p {
-        font-size: 13px;
+    .about-section p, .historical-note-plain {
+        font-size: 12px;
     }
     .simple-list li {
         font-size: 12px;
+    }
+    .storypedia-or {
+        font-size: 11px;
+        margin: 0 4px 0 2px;
+    }
+    .footer-support-link {
+        font-size: 10px;
     }
 }
 </style>
@@ -353,7 +420,7 @@ footer {
 
 <header>
     <div class="top-logo">
-        <img src="https://i.postimg.cc/yNCH6zwp/swrh-restudio.png" alt="Restudio">
+        <img src="https://i.postimg.cc/8cFpdJWB/swrh-restudio.png" alt="Restudio">
     </div>
     <div class="nav">
         <button onclick="scrollToHero()">Home</button>
@@ -370,16 +437,23 @@ footer {
 </header>
 
 <div class="main-content">
-    <!-- Hero section -->
     <div class="hero-section" id="heroSection">
         <div class="main-title">We make beautiful experiences💚</div>
         <div class="main-tagline">crafting experiences · building tools</div>
     </div>
 
-    <!-- About section - عادي جداً بدون أي زخارف -->
     <div class="about-section" id="aboutSection">
         <h2>about restudio</h2>
-        <p>Restudio was founded in January 2025. We are passionate about game development and creating useful tools for developers and creators.</p>
+        <p>Restudio was founded in 1948 7 may. We are passionate about development and creating useful tools for developers and creators.</p>
+        
+        <!-- historical note: plain text with Wikipedia + OR Restudio Storypedia -->
+        <div class="historical-note-plain">
+            <strong>Restudio's roots go back to 1948</strong> (From a fighter in the 1948 Nakba to a nurse to a son)
+            <a href="https://en.wikipedia.org/wiki/Nakba" class="wiki-link-plain" target="_blank" rel="noopener noreferrer">Wikipedia 📖</a>
+            <span class="storypedia-or">OR</span>
+            <a href="https://restudiosoftwarelaboratories.github.io/Restudio-Storypedia/" class="storypedia-link" target="_blank" rel="noopener noreferrer">Restudio Storypedia</a>
+        </div>
+        
         <p>Our main projects include <a href="https://restudio-games.itch.io/pixmancer" target="_blank">Pixmancer</a>, a pixel art companion tool, and <a href="https://restudio-games.itch.io/wetbox-game-engine" target="_blank">Wetbox Game Engine</a>, a lightweight framework for indie developers.</p>
         <p>We also build tools like Restudio Script Editor and Motion Studio X to help streamline creative workflows. Everything we make is driven by curiosity and the desire to make game development more accessible.</p>
         
@@ -395,10 +469,67 @@ footer {
     </div>
 </div>
 
-<!-- Footer with new Funblocks sections: About (Funblocks), Community (Funblocks), Resources (Funblocks) -->
 <footer>
     <div class="footer-main">
-        <!-- Original legal section -->
+        <!-- Restudio JaneOffice -->
+        <div class="footer-section">
+            <h4>Restudio JaneOffice</h4>
+            <ul>
+                <li><a href="https://restudiosoftwarelaboratories.github.io/Restudio-Presentation/" target="_blank">Restudio Presentation</a></li>
+                <li><a href="https://restudiosoftwarelaboratories.github.io/Restudio-Tables/" target="_blank">Restudio Tables</a></li>
+                <li><a href="https://restudiosoftwarelaboratories.github.io/Restudio-Documents/" target="_blank">Restudio Documents</a></li>
+                <li><a href="https://restudiosoftwarelaboratories.github.io/Restudio-Forms/" target="_blank">Restudio Forms</a></li>
+                <li><a href="https://restudiosoftwarelaboratories.github.io/Restudio-Math/" target="_blank">Restudio Math</a></li>
+        </div>
+        
+        <!-- Explore The World -->
+        <div class="footer-section">
+            <h4>Explore The World</h4>
+            <ul>
+                <li><a href="https://restudiosoftwarelaboratories.github.io/Restudio-Maps/" target="_blank">Restudio Maps</a></li>
+            </ul>
+        </div>
+        
+        <!-- Bookshelf -->
+        <div class="footer-section">
+            <h4>Bookshelf</h4>
+            <ul>
+                <li><a href="https://restudiosoftwarelaboratories.github.io/Restudio-Bookshelf/" target="_blank">Restudio Bookshelf</a></li>
+            </ul>
+        </div>
+        
+        <!-- Trends -->
+        <div class="footer-section">
+            <h4>Trends</h4>
+            <ul>
+                <li><a href="https://restudiosoftwarelaboratories.github.io/Restudio-Trends/" target="_blank">Restudio Trends</a></li>
+            </ul>
+        </div>
+        
+        <!-- Products (legacy) -->
+        <div class="footer-section">
+            <h4>Products</h4>
+            <ul>
+                <li><a href="https://restudio-lab.itch.io/wetbox-game-engine" target="_blank">Wetbox framework</a></li>
+                <li><a href="#" style="cursor:default; color:#555;">Restudio funblocks</a></li>
+                <li><a href="https://restudiosoftwarelaboratories.github.io/restudio-script-editor/" target="_blank">Restudio Script Editor</a></li>
+                <li><a href="https://restudio-lab.itch.io/pixmancer" target="_blank">Pixmancer</a></li>
+                <li><a href="https://restudiosoftwarelaboratories.github.io/MSX-WEBSITE/" target="_blank">Motion studio X (initiative)</a></li>
+            </ul>
+        </div>
+        
+        <!-- Other (new tools) -->
+        <div class="footer-section">
+            <h4>Other</h4>
+            <ul>
+                <li><a href="https://restudiosoftwarelaboratories.github.io/Restudio-Contacts/" target="_blank">Restudio Contacts</a></li>
+                <li><a href="https://restudiosoftwarelaboratories.github.io/Restudio-Translate/" target="_blank">Restudio Translate</a></li>
+                <li><a href="https://restudiosoftwarelaboratories.github.io/Restudio-Images/" target="_blank">Restudio Images</a></li>
+                <li><a href="https://restudiosoftwarelaboratories.github.io/Restudio-Calculator/" target="_blank">Restudio Calculator</a></li>
+            </ul>
+        </div>
+
+        <!-- Legal Section (NEW) -->
         <div class="footer-section">
             <h4>Legal</h4>
             <ul>
@@ -406,48 +537,9 @@ footer {
                 <li><a href="https://restudiosoftwarelaboratories.github.io/Terms-of-Service-Privacy/" target="_blank">Privacy Policy</a></li>
             </ul>
         </div>
-        
-        <!-- Original Products (keep existing references) -->
-        <div class="footer-section">
-            <h4>Products</h4>
-            <ul>
-                <li><a href="https://restudio-lab.itch.io/wetbox-game-engine" target="_blank">Wetbox framework</a></li>
-                <li><span>Restudio funblocks</span></li>
-                <li><a href="https://restudiosoftwarelaboratories.github.io/restudio-script-editor/" target="_blank">Restudio Script Editor</a></li>
-                <li><a href="https://restudio-lab.itch.io/pixmancer" target="_blank">Pixmancer</a></li>
-                <li><a href="https://restudiosoftwarelaboratories.github.io/MSX-WEBSITE/" target="_blank">Motion studio X (initiative)</a></li>
-            </ul>
-        </div>
-        
-        <!-- NEW: About (Funblocks) section -->
-        <div class="footer-section">
-            <h4>About (Funblocks)</h4>
-            <ul>
-                <li><a href="https://restudiosoftwarelaboratories.github.io/Restudio-About-Funblocks-website/" target="_blank">About Us</a></li>
-                <li><a href="https://restudiosoftwarelaboratories.github.io/Restudio-for-Parents/" target="_blank">For Parents</a></li>
-                <li><a href="https://restudiosoftwarelaboratories.github.io/Restudio-For-Educators/" target="_blank">For Educators</a></li>
-            </ul>
-        </div>
-        
-        <!-- NEW: Community (Funblocks) section -->
-        <div class="footer-section">
-            <h4>Community (Funblocks)</h4>
-            <ul>
-                <li><a href="https://restudiosoftwarelaboratories.github.io/Restudio-Community-Guidelines/" target="_blank">Guidelines</a></li>
-            </ul>
-        </div>
-        
-        <!-- NEW: Resources (Funblocks) section -->
-        <div class="footer-section">
-            <h4>Resources (Funblocks)</h4>
-            <ul>
-                <li><a href="https://restudiosoftwarelaboratories.github.io/Restudio-How-to-Get-Project-Ideas-website/" target="_blank">Starter Projects</a></li>
-                <li><a href="https://restudiosoftwarelaboratories.github.io/Restudio-How-to-Get-Project-Ideas-website/" target="_blank">Ideas</a></li>
-                <li><a href="https://restudiosoftwarelaboratories.github.io/Restudio-Help-Center/" target="_blank">Help Center</a></li>
-            </ul>
-        </div>
     </div>
     
+    <!-- Social Icons -->
     <div class="footer-social">
         <a href="https://github.com/RestudioSoftwareLaboratories" target="_blank">
             <img src="https://i.postimg.cc/jjvVFtQH/icon19.png" alt="GitHub">
@@ -465,18 +557,25 @@ footer {
             <img src="https://i.postimg.cc/Jnmnbr7q/icon17.png" alt="itch.io">
         </a>
     </div>
+
+    <!-- Support row: separate line (plain design, not next to copyright) -->
+    <div class="footer-support-row">
+        <a href="mailto:restudiosupport@gmail.com" class="footer-support-link">
+            ✉️ need help? Restudio Support
+        </a>
+    </div>
+
+    <!-- Copyright row -->
     <div class="footer-copy">
         © 2026 Restudio software laboratories. All rights reserved.
     </div>
 </footer>
 
 <script>
-// حل مشكلة التمرير مع الـ sticky header
 function scrollToElementWithOffset(element, offset = 70) {
     if (!element) return;
     const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
     const offsetPosition = elementPosition - offset;
-    
     window.scrollTo({
         top: offsetPosition,
         behavior: 'smooth'
@@ -484,31 +583,20 @@ function scrollToElementWithOffset(element, offset = 70) {
 }
 
 function scrollToHero() {
-    // الصفحة الرئيسية: نمرر إلى أعلى الصفحة (body)
-    // أفضل طريقة: التمرير إلى القمة الكاملة مع مراعاة الـ header
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     closeDropdown();
 }
 
 function scrollToAbout() {
     const aboutSection = document.getElementById('aboutSection');
-    if (aboutSection) {
-        // استخدام 70px تعويض للـ sticky header
-        scrollToElementWithOffset(aboutSection, 70);
-    }
+    if (aboutSection) scrollToElementWithOffset(aboutSection, 70);
     closeDropdown();
 }
 
 function toggleApps() {
     const menu = document.getElementById("appsMenu");
-    if (menu.style.display === "block") {
-        menu.style.display = "none";
-    } else {
-        menu.style.display = "block";
-    }
+    if (menu.style.display === "block") menu.style.display = "none";
+    else menu.style.display = "block";
 }
 
 function closeDropdown() {
@@ -516,7 +604,6 @@ function closeDropdown() {
     if (menu) menu.style.display = "none";
 }
 
-// Close dropdown when clicking outside
 window.addEventListener('click', (event) => {
     const menu = document.getElementById("appsMenu");
     const dropdownBtn = document.querySelector('.dropdown button');
@@ -528,19 +615,10 @@ window.addEventListener('click', (event) => {
 
 window.addEventListener('load', () => {
     closeDropdown();
-    
-    // تحقق من وجود أي هاش في الرابط عند التحميل (مثلاً #aboutSection)
-    if (window.location.hash) {
-        const hash = window.location.hash.substring(1);
-        if (hash === 'aboutSection') {
-            setTimeout(() => {
-                scrollToAbout();
-            }, 100);
-        } else if (hash === 'heroSection') {
-            setTimeout(() => {
-                scrollToHero();
-            }, 100);
-        }
+    if (window.location.hash === '#aboutSection') {
+        setTimeout(() => scrollToAbout(), 100);
+    } else if (window.location.hash === '#heroSection') {
+        setTimeout(() => scrollToHero(), 100);
     }
 });
 </script>
